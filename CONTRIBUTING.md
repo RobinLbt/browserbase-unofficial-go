@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/browserbase-unofficial-go=/path/to/browserbase-unofficial-go
+$ go mod edit -replace github.com/RobinLbt/browserbase-unofficial-go=/path/to/browserbase-unofficial-go
 ```
 
 ## Running tests
