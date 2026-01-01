@@ -10,9 +10,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/testutil"
-	"github.com/stainless-sdks/browserbase-unofficial-go/option"
+	"github.com/RobinLbt/browserbase-unofficial-go"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/testutil"
+	"github.com/RobinLbt/browserbase-unofficial-go/option"
 )
 
 func TestExtensionNew(t *testing.T) {

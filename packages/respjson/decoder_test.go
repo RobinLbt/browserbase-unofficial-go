@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apijson"
-	rj "github.com/stainless-sdks/browserbase-unofficial-go/packages/respjson"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apijson"
+	rj "github.com/RobinLbt/browserbase-unofficial-go/packages/respjson"
 	"reflect"
 	"testing"
 )

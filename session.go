@@ -14,13 +14,13 @@ import (
 	"slices"
 	"time"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apiform"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apijson"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apiquery"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/requestconfig"
-	"github.com/stainless-sdks/browserbase-unofficial-go/option"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/respjson"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apiform"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apijson"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apiquery"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/requestconfig"
+	"github.com/RobinLbt/browserbase-unofficial-go/option"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/respjson"
 )
 
 // SessionService contains methods and other services that help with interacting

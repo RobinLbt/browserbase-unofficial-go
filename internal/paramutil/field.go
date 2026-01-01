@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/respjson"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

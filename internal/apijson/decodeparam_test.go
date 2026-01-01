@@ -3,8 +3,8 @@ package apijson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apijson"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apijson"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 	"reflect"
 	"testing"
 )

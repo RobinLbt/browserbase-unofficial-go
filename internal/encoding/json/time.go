@@ -2,7 +2,7 @@
 package json
 
 import (
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/encoding/json/shims"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/encoding/json/shims"
 	"reflect"
 	"time"
 )

@@ -3,8 +3,8 @@
 package browserbaseunofficial
 
 import (
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apierror"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apierror"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

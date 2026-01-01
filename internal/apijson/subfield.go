@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/respjson"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/respjson"
 	"reflect"
 )
 

@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 )
 
 var encoders sync.Map // map[reflect.Type]encoderFunc

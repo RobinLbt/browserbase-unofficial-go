@@ -2,7 +2,7 @@ package apijson
 
 import (
 	"errors"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 	"reflect"
 
 	"github.com/tidwall/gjson"
