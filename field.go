@@ -1,7 +1,7 @@
 package browserbaseunofficial
 
 import (
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 	"io"
 	"time"
 )

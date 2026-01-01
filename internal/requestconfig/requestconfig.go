@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apierror"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apiform"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/apiquery"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apierror"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apiform"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

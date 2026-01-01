@@ -7,7 +7,7 @@ package apijson
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/browserbase-unofficial-go/packages/param"
+	"github.com/RobinLbt/browserbase-unofficial-go/packages/param"
 	"reflect"
 	"strconv"
 	"sync"

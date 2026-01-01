@@ -8,8 +8,8 @@ import (
 	"os"
 	"slices"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/requestconfig"
-	"github.com/stainless-sdks/browserbase-unofficial-go/option"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/requestconfig"
+	"github.com/RobinLbt/browserbase-unofficial-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

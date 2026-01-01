@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/browserbase-unofficial-go"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal"
-	"github.com/stainless-sdks/browserbase-unofficial-go/option"
+	"github.com/RobinLbt/browserbase-unofficial-go"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal"
+	"github.com/RobinLbt/browserbase-unofficial-go/option"
 )
 
 type closureTransport struct {

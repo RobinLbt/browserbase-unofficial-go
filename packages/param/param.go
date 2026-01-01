@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/browserbase-unofficial-go/internal/encoding/json/sentinel"
+	"github.com/RobinLbt/browserbase-unofficial-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

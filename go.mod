@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/browserbase-unofficial-go
+module github.com/RobinLbt/browserbase-unofficial-go
 
 go 1.22
 
