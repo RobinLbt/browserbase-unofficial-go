@@ -69,17 +69,17 @@ func (r *ContextService) Update(ctx context.Context, id string, opts ...option.R
 }
 
 type CreateContextResponse struct {
-	ID string `json:"id,required"`
+	ID string `json:"id" api:"required"`
 	// The cipher algorithm used to encrypt the user-data-directory. AES-256-CBC is
 	// currently the only supported algorithm.
-	CipherAlgorithm string `json:"cipherAlgorithm,required"`
+	CipherAlgorithm string `json:"cipherAlgorithm" api:"required"`
 	// The initialization vector size used to encrypt the user-data-directory.
 	// [Read more about how to use it](/features/contexts).
-	InitializationVectorSize int64 `json:"initializationVectorSize,required"`
+	InitializationVectorSize int64 `json:"initializationVectorSize" api:"required"`
 	// The public key to encrypt the user-data-directory.
-	PublicKey string `json:"publicKey,required"`
+	PublicKey string `json:"publicKey" api:"required"`
 	// An upload URL to upload a custom user-data-directory.
-	UploadURL string `json:"uploadUrl,required"`
+	UploadURL string `json:"uploadUrl" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID                       respjson.Field
@@ -99,11 +99,11 @@ func (r *CreateContextResponse) UnmarshalJSON(data []byte) error {
 }
 
 type ContextGetResponse struct {
-	ID        string    `json:"id,required"`
-	CreatedAt time.Time `json:"createdAt,required" format:"date-time"`
+	ID        string    `json:"id" api:"required"`
+	CreatedAt time.Time `json:"createdAt" api:"required" format:"date-time"`
 	// The Project ID linked to the uploaded Context.
-	ProjectID string    `json:"projectId,required"`
-	UpdatedAt time.Time `json:"updatedAt,required" format:"date-time"`
+	ProjectID string    `json:"projectId" api:"required"`
+	UpdatedAt time.Time `json:"updatedAt" api:"required" format:"date-time"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID          respjson.Field
@@ -124,7 +124,7 @@ func (r *ContextGetResponse) UnmarshalJSON(data []byte) error {
 type ContextNewParams struct {
 	// The Project ID. Can be found in
 	// [Settings](https://www.browserbase.com/settings).
-	ProjectID string `json:"projectId,required"`
+	ProjectID string `json:"projectId" api:"required"`
 	paramObj
 }
 

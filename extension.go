@@ -73,12 +73,12 @@ func (r *ExtensionService) Delete(ctx context.Context, id string, opts ...option
 }
 
 type Extension struct {
-	ID        string    `json:"id,required"`
-	CreatedAt time.Time `json:"createdAt,required" format:"date-time"`
-	FileName  string    `json:"fileName,required"`
+	ID        string    `json:"id" api:"required"`
+	CreatedAt time.Time `json:"createdAt" api:"required" format:"date-time"`
+	FileName  string    `json:"fileName" api:"required"`
 	// The Project ID linked to the uploaded Extension.
-	ProjectID string    `json:"projectId,required"`
-	UpdatedAt time.Time `json:"updatedAt,required" format:"date-time"`
+	ProjectID string    `json:"projectId" api:"required"`
+	UpdatedAt time.Time `json:"updatedAt" api:"required" format:"date-time"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID          respjson.Field
@@ -98,7 +98,7 @@ func (r *Extension) UnmarshalJSON(data []byte) error {
 }
 
 type ExtensionNewParams struct {
-	File io.Reader `json:"file,omitzero,required" format:"binary"`
+	File io.Reader `json:"file,omitzero" api:"required" format:"binary"`
 	paramObj
 }
 
