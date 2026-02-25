@@ -153,23 +153,23 @@ const (
 )
 
 type Session struct {
-	ID        string    `json:"id,required"`
-	CreatedAt time.Time `json:"createdAt,required" format:"date-time"`
-	ExpiresAt time.Time `json:"expiresAt,required" format:"date-time"`
+	ID        string    `json:"id" api:"required"`
+	CreatedAt time.Time `json:"createdAt" api:"required" format:"date-time"`
+	ExpiresAt time.Time `json:"expiresAt" api:"required" format:"date-time"`
 	// Indicates if the Session was created to be kept alive upon disconnections
-	KeepAlive bool `json:"keepAlive,required"`
+	KeepAlive bool `json:"keepAlive" api:"required"`
 	// The Project ID linked to the Session.
-	ProjectID string `json:"projectId,required"`
+	ProjectID string `json:"projectId" api:"required"`
 	// Bytes used via the [Proxy](/features/stealth-mode#proxies-and-residential-ips)
-	ProxyBytes int64 `json:"proxyBytes,required"`
+	ProxyBytes int64 `json:"proxyBytes" api:"required"`
 	// The region where the Session is running.
 	//
 	// Any of "us-west-2", "us-east-1", "eu-central-1", "ap-southeast-1".
-	Region    Region    `json:"region,required"`
-	StartedAt time.Time `json:"startedAt,required" format:"date-time"`
+	Region    Region    `json:"region" api:"required"`
+	StartedAt time.Time `json:"startedAt" api:"required" format:"date-time"`
 	// Any of "RUNNING", "ERROR", "TIMED_OUT", "COMPLETED".
-	Status    SessionStatus `json:"status,required"`
-	UpdatedAt time.Time     `json:"updatedAt,required" format:"date-time"`
+	Status    SessionStatus `json:"status" api:"required"`
+	UpdatedAt time.Time     `json:"updatedAt" api:"required" format:"date-time"`
 	// CPU used by the Session
 	AvgCPUUsage int64 `json:"avgCpuUsage"`
 	// Optional. The Context linked to the Session.
@@ -214,29 +214,29 @@ const (
 )
 
 type SessionNewResponse struct {
-	ID string `json:"id,required"`
+	ID string `json:"id" api:"required"`
 	// WebSocket URL to connect to the Session.
-	ConnectURL string    `json:"connectUrl,required" format:"uri"`
-	CreatedAt  time.Time `json:"createdAt,required" format:"date-time"`
-	ExpiresAt  time.Time `json:"expiresAt,required" format:"date-time"`
+	ConnectURL string    `json:"connectUrl" api:"required" format:"uri"`
+	CreatedAt  time.Time `json:"createdAt" api:"required" format:"date-time"`
+	ExpiresAt  time.Time `json:"expiresAt" api:"required" format:"date-time"`
 	// Indicates if the Session was created to be kept alive upon disconnections
-	KeepAlive bool `json:"keepAlive,required"`
+	KeepAlive bool `json:"keepAlive" api:"required"`
 	// The Project ID linked to the Session.
-	ProjectID string `json:"projectId,required"`
+	ProjectID string `json:"projectId" api:"required"`
 	// Bytes used via the [Proxy](/features/stealth-mode#proxies-and-residential-ips)
-	ProxyBytes int64 `json:"proxyBytes,required"`
+	ProxyBytes int64 `json:"proxyBytes" api:"required"`
 	// The region where the Session is running.
 	//
 	// Any of "us-west-2", "us-east-1", "eu-central-1", "ap-southeast-1".
-	Region Region `json:"region,required"`
+	Region Region `json:"region" api:"required"`
 	// HTTP URL to connect to the Session.
-	SeleniumRemoteURL string `json:"seleniumRemoteUrl,required" format:"uri"`
+	SeleniumRemoteURL string `json:"seleniumRemoteUrl" api:"required" format:"uri"`
 	// Signing key to use when connecting to the Session via HTTP.
-	SigningKey string    `json:"signingKey,required"`
-	StartedAt  time.Time `json:"startedAt,required" format:"date-time"`
+	SigningKey string    `json:"signingKey" api:"required"`
+	StartedAt  time.Time `json:"startedAt" api:"required" format:"date-time"`
 	// Any of "RUNNING", "ERROR", "TIMED_OUT", "COMPLETED".
-	Status    SessionStatus `json:"status,required"`
-	UpdatedAt time.Time     `json:"updatedAt,required" format:"date-time"`
+	Status    SessionStatus `json:"status" api:"required"`
+	UpdatedAt time.Time     `json:"updatedAt" api:"required" format:"date-time"`
 	// CPU used by the Session
 	AvgCPUUsage int64 `json:"avgCpuUsage"`
 	// Optional. The Context linked to the Session.
@@ -275,7 +275,7 @@ func (r *SessionNewResponse) UnmarshalJSON(data []byte) error {
 }
 
 type SessionNewUploadsResponse struct {
-	Message string `json:"message,required"`
+	Message string `json:"message" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		Message     respjson.Field
@@ -291,10 +291,10 @@ func (r *SessionNewUploadsResponse) UnmarshalJSON(data []byte) error {
 }
 
 type SessionDebugResponse struct {
-	DebuggerFullscreenURL string                     `json:"debuggerFullscreenUrl,required" format:"uri"`
-	DebuggerURL           string                     `json:"debuggerUrl,required" format:"uri"`
-	Pages                 []SessionDebugResponsePage `json:"pages,required"`
-	WsURL                 string                     `json:"wsUrl,required" format:"uri"`
+	DebuggerFullscreenURL string                     `json:"debuggerFullscreenUrl" api:"required" format:"uri"`
+	DebuggerURL           string                     `json:"debuggerUrl" api:"required" format:"uri"`
+	Pages                 []SessionDebugResponsePage `json:"pages" api:"required"`
+	WsURL                 string                     `json:"wsUrl" api:"required" format:"uri"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		DebuggerFullscreenURL respjson.Field
@@ -313,12 +313,12 @@ func (r *SessionDebugResponse) UnmarshalJSON(data []byte) error {
 }
 
 type SessionDebugResponsePage struct {
-	ID                    string `json:"id,required"`
-	DebuggerFullscreenURL string `json:"debuggerFullscreenUrl,required" format:"uri"`
-	DebuggerURL           string `json:"debuggerUrl,required" format:"uri"`
-	FaviconURL            string `json:"faviconUrl,required" format:"uri"`
-	Title                 string `json:"title,required"`
-	URL                   string `json:"url,required" format:"uri"`
+	ID                    string `json:"id" api:"required"`
+	DebuggerFullscreenURL string `json:"debuggerFullscreenUrl" api:"required" format:"uri"`
+	DebuggerURL           string `json:"debuggerUrl" api:"required" format:"uri"`
+	FaviconURL            string `json:"faviconUrl" api:"required" format:"uri"`
+	Title                 string `json:"title" api:"required"`
+	URL                   string `json:"url" api:"required" format:"uri"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID                    respjson.Field
@@ -339,12 +339,12 @@ func (r *SessionDebugResponsePage) UnmarshalJSON(data []byte) error {
 }
 
 type SessionLogsResponse struct {
-	EventID   string `json:"eventId,required"`
-	Method    string `json:"method,required"`
-	PageID    int64  `json:"pageId,required"`
-	SessionID string `json:"sessionId,required"`
+	EventID   string `json:"eventId" api:"required"`
+	Method    string `json:"method" api:"required"`
+	PageID    int64  `json:"pageId" api:"required"`
+	SessionID string `json:"sessionId" api:"required"`
 	// milliseconds that have elapsed since the UNIX epoch
-	Timestamp int64                       `json:"timestamp,required"`
+	Timestamp int64                       `json:"timestamp" api:"required"`
 	FrameID   string                      `json:"frameId"`
 	LoaderID  string                      `json:"loaderId"`
 	Request   SessionLogsResponseRequest  `json:"request"`
@@ -372,10 +372,10 @@ func (r *SessionLogsResponse) UnmarshalJSON(data []byte) error {
 }
 
 type SessionLogsResponseRequest struct {
-	Params  map[string]any `json:"params,required"`
-	RawBody string         `json:"rawBody,required"`
+	Params  map[string]any `json:"params" api:"required"`
+	RawBody string         `json:"rawBody" api:"required"`
 	// milliseconds that have elapsed since the UNIX epoch
-	Timestamp int64 `json:"timestamp,required"`
+	Timestamp int64 `json:"timestamp" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		Params      respjson.Field
@@ -393,10 +393,10 @@ func (r *SessionLogsResponseRequest) UnmarshalJSON(data []byte) error {
 }
 
 type SessionLogsResponseResponse struct {
-	RawBody string         `json:"rawBody,required"`
-	Result  map[string]any `json:"result,required"`
+	RawBody string         `json:"rawBody" api:"required"`
+	Result  map[string]any `json:"result" api:"required"`
 	// milliseconds that have elapsed since the UNIX epoch
-	Timestamp int64 `json:"timestamp,required"`
+	Timestamp int64 `json:"timestamp" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		RawBody     respjson.Field
@@ -414,14 +414,14 @@ func (r *SessionLogsResponseResponse) UnmarshalJSON(data []byte) error {
 }
 
 type SessionRecordingResponse struct {
-	ID string `json:"id,required"`
+	ID string `json:"id" api:"required"`
 	// See
 	// [rrweb documentation](https://github.com/rrweb-io/rrweb/blob/master/docs/recipes/dive-into-event.md).
-	Data      map[string]any `json:"data,required"`
-	SessionID string         `json:"sessionId,required"`
+	Data      map[string]any `json:"data" api:"required"`
+	SessionID string         `json:"sessionId" api:"required"`
 	// milliseconds that have elapsed since the UNIX epoch
-	Timestamp int64 `json:"timestamp,required"`
-	Type      int64 `json:"type,required"`
+	Timestamp int64 `json:"timestamp" api:"required"`
+	Type      int64 `json:"type" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID          respjson.Field
@@ -443,7 +443,7 @@ func (r *SessionRecordingResponse) UnmarshalJSON(data []byte) error {
 type SessionNewParams struct {
 	// The Project ID. Can be found in
 	// [Settings](https://www.browserbase.com/settings).
-	ProjectID string `json:"projectId,required"`
+	ProjectID string `json:"projectId" api:"required"`
 	// The uploaded Extension ID. See
 	// [Upload Extension](/reference/api/upload-an-extension).
 	ExtensionID param.Opt[string] `json:"extensionId,omitzero"`
@@ -503,7 +503,7 @@ func (r *SessionNewParamsBrowserSettings) UnmarshalJSON(data []byte) error {
 // The property ID is required.
 type SessionNewParamsBrowserSettingsContext struct {
 	// The Context ID.
-	ID string `json:"id,required"`
+	ID string `json:"id" api:"required"`
 	// Whether or not to persist the context after browsing. Defaults to `false`.
 	Persist param.Opt[bool] `json:"persist,omitzero"`
 	paramObj
@@ -585,12 +585,12 @@ func (r *SessionNewParamsBrowserSettingsViewport) UnmarshalJSON(data []byte) err
 type SessionUpdateParams struct {
 	// The Project ID. Can be found in
 	// [Settings](https://www.browserbase.com/settings).
-	ProjectID string `json:"projectId,required"`
+	ProjectID string `json:"projectId" api:"required"`
 	// Set to `REQUEST_RELEASE` to request that the session complete. Use before
 	// session's timeout to avoid additional charges.
 	//
 	// Any of "REQUEST_RELEASE".
-	Status SessionUpdateParamsStatus `json:"status,omitzero,required"`
+	Status SessionUpdateParamsStatus `json:"status,omitzero" api:"required"`
 	paramObj
 }
 
@@ -625,7 +625,7 @@ func (r SessionListParams) URLQuery() (v url.Values, err error) {
 }
 
 type SessionNewUploadsParams struct {
-	File io.Reader `json:"file,omitzero,required" format:"binary"`
+	File io.Reader `json:"file,omitzero" api:"required" format:"binary"`
 	paramObj
 }
 

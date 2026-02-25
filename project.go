@@ -68,12 +68,12 @@ func (r *ProjectService) Usage(ctx context.Context, id string, opts ...option.Re
 }
 
 type Project struct {
-	ID             string    `json:"id,required"`
-	CreatedAt      time.Time `json:"createdAt,required" format:"date-time"`
-	DefaultTimeout int64     `json:"defaultTimeout,required"`
-	Name           string    `json:"name,required"`
-	OwnerID        string    `json:"ownerId,required"`
-	UpdatedAt      time.Time `json:"updatedAt,required" format:"date-time"`
+	ID             string    `json:"id" api:"required"`
+	CreatedAt      time.Time `json:"createdAt" api:"required" format:"date-time"`
+	DefaultTimeout int64     `json:"defaultTimeout" api:"required"`
+	Name           string    `json:"name" api:"required"`
+	OwnerID        string    `json:"ownerId" api:"required"`
+	UpdatedAt      time.Time `json:"updatedAt" api:"required" format:"date-time"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		ID             respjson.Field
@@ -94,8 +94,8 @@ func (r *Project) UnmarshalJSON(data []byte) error {
 }
 
 type ProjectUsageResponse struct {
-	BrowserMinutes int64 `json:"browserMinutes,required"`
-	ProxyBytes     int64 `json:"proxyBytes,required"`
+	BrowserMinutes int64 `json:"browserMinutes" api:"required"`
+	ProxyBytes     int64 `json:"proxyBytes" api:"required"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
 		BrowserMinutes respjson.Field
